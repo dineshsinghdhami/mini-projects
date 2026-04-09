@@ -1,0 +1,350 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Strength Checker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f2f4f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('black.jpg');
+      }
+
+      .password-checker-container {
+        background: #ffffff;
+        padding: 30px;
+        width: 380px;
+        border-radius: 12px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .password-input-container {
+        display: flex;
+        position: relative;
+      }
+
+      .password-input {
+        width: 100%;
+        padding: 12px 40px 12px 12px;
+        font-size: 15px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        outline: none;
+      }
+
+      .password-input:focus {
+        border-color: #4a77ff;
+      }
+
+      .toggle-password-btn {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .eye-icon {
+        width: 22px;
+        height: 22px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .strength-meter-container {
+        margin-top: 20px;
+      }
+
+      .strength-meter-bg {
+        width: 100%;
+        height: 8px;
+        background: #dcdcdc;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .strength-meter-fill {
+        height: 100%;
+        width: 0%;
+        transition: 0.3s;
+      }
+
+      :root {
+        --strength-weak: #ff4d4d;
+        --strength-medium: #ffb84d;
+        --strength-strong: #4da6ff;
+        --strength-very-strong: #2ecc71;
+      }
+
+      .strength-text {
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .requirements-list {
+        margin-top: 20px;
+        list-style: none;
+      }
+
+      .requirement-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #444;
+      }
+
+      .requirement-icon svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+        color: #ff4d4d;
+      }
+
+      .requirement-item.met .requirement-icon svg {
+        color: #2ecc71;
+      }
+
+      .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #284b3d;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding: 12px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(219, 67, 67, 0.3);
+}
+
+.nav-logo {
+    font-size: 19px;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+}
+  </style>
+</head>
+  <body>
+
+    <nav class="navbar">
+    <div class="nav-logo">Password Health Checker by Dinesh Singh Dhami</div>
+</nav>
+    <div class="password-checker-container">
+      <h1 class="title">Password Health Checker</h1>
+      <p class="subtitle">Enter a password to check its strength.</p>
+
+      <!-- Password Input -->
+      <div class="password-input-container">
+        <input
+          id="password-input"
+          type="password"
+          placeholder="Enter your password"
+          class="password-input"
+        />
+        <button id="toggle-password" class="toggle-password-btn">
+          <svg
+            id="eye-icon-open"
+            class="eye-icon"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+            />
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+            />
+          </svg>
+          <svg
+            id="eye-icon-closed"
+            class="eye-icon hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7 .946-3.111 3.454-5.514 6.542-6.325m1.125 1.125A3 3 0 1112 15a3 3 0 01-3.875-2.875M1 1l22 22"
+            />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Strength Meter -->
+      <div class="strength-meter-container">
+        <div class="strength-meter-bg">
+          <div id="strength-bar" class="strength-meter-fill"></div>
+        </div>
+        <div class="strength-text-container">
+          <span id="strength-text" class="strength-text"></span>
+        </div>
+      </div>
+
+      <!-- Requirements Checklist -->
+      <ul id="requirements-list" class="requirements-list">
+        <li id="length" class="requirement-item">
+          <span class="requirement-icon"></span> At least 8 characters long
+        </li>
+        <li id="lowercase" class="requirement-item">
+          <span class="requirement-icon"></span> Contains a lowercase letter (a-z)
+        </li>
+        <li id="uppercase" class="requirement-item">
+          <span class="requirement-icon"></span> Contains an uppercase letter (A-Z)
+        </li>
+        <li id="number" class="requirement-item">
+          <span class="requirement-icon"></span> Contains a number (0-9)
+        </li>
+        <li id="symbol" class="requirement-item">
+          <span class="requirement-icon"></span> Contains a special character (!, @, #, etc.)
+        </li>
+      </ul>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+  const passwordInput = document.getElementById("password-input");
+  const togglePassword = document.getElementById("toggle-password");
+  const eyeIconOpen = document.getElementById("eye-icon-open");
+  const eyeIconClosed = document.getElementById("eye-icon-closed");
+  const strengthBar = document.getElementById("strength-bar");
+  const strengthText = document.getElementById("strength-text");
+
+  const requirements = [
+    { id: "length", regex: /.{8,}/, score: 20 },
+    { id: "lowercase", regex: /[a-z]/, score: 20 },
+    { id: "uppercase", regex: /[A-Z]/, score: 20 },
+    { id: "number", regex: /[0-9]/, score: 20 },
+    { id: "symbol", regex: /[^A-Za-z0-9]/, score: 20 },
+  ];
+
+  const checkMarkIcon = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+    </svg>
+  `;
+
+  const xMarkIcon = `
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+    </svg>
+  `;
+
+  passwordInput.addEventListener("input", handlePasswordInput);
+  togglePassword.addEventListener("click", togglePasswordVisibility);
+
+  function handlePasswordInput() {
+    const password = passwordInput.value;
+
+    if (password.length === 0) {
+      resetUI();
+      return;
+    }
+
+    let score = 0;
+
+    requirements.forEach((req) => {
+      const reqEl = document.getElementById(req.id);
+      const iconEl = reqEl.querySelector(".requirement-icon");
+
+      if (req.regex.test(password)) {
+        score += req.score;
+        reqEl.classList.add("met");
+        iconEl.innerHTML = checkMarkIcon;
+      } else {
+        reqEl.classList.remove("met");
+        iconEl.innerHTML = xMarkIcon;
+      }
+    });
+
+    updateStrengthUI(score);
+  }
+
+  function updateStrengthUI(score) {
+    strengthBar.style.width = `${score}%`;
+
+    if (score < 40) {
+      strengthText.textContent = "Weak";
+      strengthBar.style.backgroundColor = "var(--strength-weak)";
+    } else if (score < 80) {
+      strengthText.textContent = "Medium";
+      strengthBar.style.backgroundColor = "var(--strength-medium)";
+    } else {
+      strengthText.textContent = score === 100 ? "Very Strong" : "Strong";
+      strengthBar.style.backgroundColor =
+        score === 100 ? "var(--strength-very-strong)" : "var(--strength-strong)";
+    }
+  }
+
+  function resetUI() {
+    strengthBar.style.width = "0%";
+    strengthText.textContent = "";
+    strengthBar.style.backgroundColor = "";
+
+    requirements.forEach((req) => {
+      const reqEl = document.getElementById(req.id);
+      const iconEl = reqEl.querySelector(".requirement-icon");
+      reqEl.classList.remove("met");
+      iconEl.innerHTML = xMarkIcon;
+    });
+  }
+
+  function togglePasswordVisibility() {
+    const isPassword = passwordInput.type === "password";
+    passwordInput.type = isPassword ? "text" : "password";
+    eyeIconOpen.classList.toggle("hidden", !isPassword);
+    eyeIconClosed.classList.toggle("hidden", isPassword);
+  }
+});
+
+    </script>
+  </body>
+</html>
