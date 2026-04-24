@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+    <div class="top-bar">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+    </div>
+
+    <div class="content">
+        <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png" class="weather-img">
+
+        <h1>Weather App</h1>
+
+        <form id="weatherForm">
+            <input type="text" id="cityInput" placeholder="Enter your city name">
+            <button type="submit">Search</button>
+        </form>
+
+        <div id="result"></div>
+
+        <p class="footer">Powered by OpenWeatherMap</p>
+    </div>
+
+    <script src="app.js"></script>
+</div>
+</body>
+</html>
