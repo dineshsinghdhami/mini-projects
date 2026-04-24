@@ -1,3 +1,4 @@
+// Script file of countdown -timer
 const startBtn = document.getElementById('startBtn');
 const timeDisplay = document.getElementById('time');
 const minutesInput = document.getElementById('minutes');

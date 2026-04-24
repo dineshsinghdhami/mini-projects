@@ -1,3 +1,4 @@
+// Script file of password-generator
 const passwordField = document.getElementById("password");
 const generateBtn = document.getElementById("generate");
 const upperTick = document.getElementById("upper");

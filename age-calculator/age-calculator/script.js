@@ -1,3 +1,4 @@
+// Script file of age-calculator
 let dateOfBirth = document.querySelector("#DOB");
 const CalcAge = document.getElementById("CalcAge");
 const Age = document.getElementById("age");

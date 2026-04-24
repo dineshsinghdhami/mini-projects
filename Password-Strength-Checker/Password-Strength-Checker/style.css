@@ -1,0 +1,155 @@
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: #f2f4f7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-image: url('black.jpg');
+      }
+
+      .password-checker-container {
+        background: #ffffff;
+        padding: 30px;
+        width: 380px;
+        border-radius: 12px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 6px;
+      }
+
+      .subtitle {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .password-input-container {
+        display: flex;
+        position: relative;
+      }
+
+      .password-input {
+        width: 100%;
+        padding: 12px 40px 12px 12px;
+        font-size: 15px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        outline: none;
+      }
+
+      .password-input:focus {
+        border-color: #4a77ff;
+      }
+
+      .toggle-password-btn {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      .eye-icon {
+        width: 22px;
+        height: 22px;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .strength-meter-container {
+        margin-top: 20px;
+      }
+
+      .strength-meter-bg {
+        width: 100%;
+        height: 8px;
+        background: #dcdcdc;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+
+      .strength-meter-fill {
+        height: 100%;
+        width: 0%;
+        transition: 0.3s;
+      }
+
+      :root {
+        --strength-weak: #ff4d4d;
+        --strength-medium: #ffb84d;
+        --strength-strong: #4da6ff;
+        --strength-very-strong: #2ecc71;
+      }
+
+      .strength-text {
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .requirements-list {
+        margin-top: 20px;
+        list-style: none;
+      }
+
+      .requirement-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 14px;
+        color: #444;
+      }
+
+      .requirement-icon svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 8px;
+        color: #ff4d4d;
+      }
+
+      .requirement-item.met .requirement-icon svg {
+        color: #2ecc71;
+      }
+
+      .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #284b3d;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    padding: 12px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(219, 67, 67, 0.3);
+}
+
+.nav-logo {
+    font-size: 19px;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+    }
+}
