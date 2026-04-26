@@ -55,7 +55,8 @@ mini-projects/
 ├── Stop Watch/
 ├── Temperature Converter/
 ├── Tic Tac Toe/
-└── To Do List/
+├── To Do List/
+└── Weather App/
 ```
 
 ---
