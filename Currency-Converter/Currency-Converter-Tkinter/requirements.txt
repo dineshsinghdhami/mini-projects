@@ -1,0 +1,10 @@
+requests
+Pillow
+numpy
+pandas
+matplotlib
+python-dotenv
+pytest
+black
+flake8
+autopep8
