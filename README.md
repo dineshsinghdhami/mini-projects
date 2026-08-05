@@ -1,10 +1,10 @@
-# ✨ Dinesh Singh Dhami's Mini Projects Collection
+# # Dinesh Singh Dhami's Mini Projects Collection
 
 Welcome to a collection of my mini projects built using Python, JavaScript, and web technologies. Each project is designed to solve a small, practical problem or create a fun tool.
 
 ---
 
-## 🌟 Projects List
+## # Projects List
 
 | Project Name | Description | Tech Stack | View Code |
 |--------------|------------|-----------|-----------|
@@ -27,7 +27,7 @@ Welcome to a collection of my mini projects built using Python, JavaScript, and 
 | **Weather App** | Check Weather of different city | HTML, CSS, JS | [Code](https://github.com/dineshsinghdhami/weather-app) |
 ---
 
-## 🚀 Highlights
+## # Highlights
 
 - ✅ Desktop and web-based apps.  
 - ✅ Fun games and practical utilities.  
@@ -36,7 +36,7 @@ Welcome to a collection of my mini projects built using Python, JavaScript, and 
 
 ---
 
-## 📁 Project Structure
+## # Project Structure
 ```
 mini-projects/
 │
@@ -61,7 +61,7 @@ mini-projects/
 
 ---
 
-## 💻 Technologies Used
+## # Technologies Used
 
 - **Python** (Tkinter, random, datetime, etc.)  
 - **HTML5**  
@@ -71,18 +71,16 @@ mini-projects/
 
 ---
 
-## 👨‍💻 Author
+##  License
 
-**Dinesh Singh Dhami**  
-📧 [Email Me](mailto:dineshdhamidn@gmail.com)  
-🌐 [Portfolio](https://www.dineshsinghdhami.com.np)  
-💼 [LinkedIn](https://linkedin.com/in/dineshsinghdhami1)  
-🐙 [GitHub](https://github.com/dineshsinghdhami)
+- All projects are free to use for personal and educational purposes.  
 
 ---
 
-## ©️ License
+## # Author
 
-- All projects are free to use for personal and educational purposes.  
-- For commercial use, redistribution, or modifications, contact the author.  
-- © 2026 **Dinesh Singh Dhami**
+**Dinesh Singh Dhami**
+
+- Website: https://dineshsinghdhami.com.np
+- GitHub: https://github.com/dineshsinghdhami
+- Email: dineshdhamidn@gmail.com
