@@ -10,7 +10,7 @@ Welcome to a collection of my mini projects built using Python, JavaScript, and 
 |--------------|------------|-----------|-----------|
 | **Age Calculator** | Calculate age from birthdate. | HTML, CSS, JS | [Code](https://github.com/dineshsinghdhami/mini-projects/tree/main/age-calculator) |
 | **Analog Clock** | Real-time analog clock display. | HTML, CSS, JS | [Code](https://github.com/dineshsinghdhami/mini-projects/tree/main/analog-clock) |
-| **Countdown Timer** | Timer with customizable countdown. | HTML, CSS, JS | [Code](https://github.com/dineshsinghdhami/mini-projects/tree/main/Countdown-Timer/Countdown-Timer) |
+| **Countdown Timer** | Timer with customizable countdown. | HTML, CSS, JS | [Code](https://github.com/dineshsinghdhami/mini-projects/tree/main/Currency-Converter/Currency-Converter-Tkinter) |
 | **Currency Converter Tkinter** | Convert currencies with a desktop GUI. | Python / Tkinter | [Code](https://github.com/dineshsinghdhami/mini-projects/tree/main/Currency-Converter-Tkinter) |
 | **Digital Clock Python** | Desktop digital clock app. | Python / Tkinter | [Code](https://github.com/dineshsinghdhami/mini-projects/tree/main/Digital-Clock-Python/Digital-Clock-Python) |
 | **Hangman Game Python** | Classic Hangman word guessing game. | Python | [Code](https://github.com/dineshsinghdhami/mini-projects/tree/main/Hangman-Game-Python/Hangman-Game-Python) |
@@ -25,7 +25,7 @@ Welcome to a collection of my mini projects built using Python, JavaScript, and 
 | **Temperature Converter** | Convert temperature between units. | HTML, CSS, JS | [Code](https://github.com/dineshsinghdhami/mini-projects/tree/main/Temperature-Converter) |
 | **Tic Tac Toe** | Classic Tic Tac Toe game. | HTML, CSS, JS | [Code](https://github.com/dineshsinghdhami/mini-projects/tree/main/Tic-Tac-Toe) |
 | **To Do List** | Task manager with add/remove functionality. | HTML, CSS, JS | [Code](https://github.com/dineshsinghdhami/mini-projects/tree/main/To-Do-List) |
-| **Unit Converter Tkinter** | Convert units with a desktop GUI. | Python / Tkinter | [Code](https://github.com/dineshsinghdhami/mini-projects/tree/main/Unit-Converter-Tkinter) |
+| **Unit Converter Tkinter** | Convert units with a desktop GUI. | Python / Tkinter | [Code](https://github.com/dineshsinghdhami/mini-projects/tree/main/Unit-Converter/Unit-Converter-Tkinter) |
 | **Weather App** | Check Weather of different city. | HTML, CSS, JS | [Code](https://github.com/dineshsinghdhami/weather-app) |
 
 ---
